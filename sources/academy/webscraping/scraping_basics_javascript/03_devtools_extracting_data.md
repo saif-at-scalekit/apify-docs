@@ -119,7 +119,7 @@ On Fandom's [Movies page](https://www.fandom.com/topics/movies), use CSS selecto
 
 ### Extract details about the first post on Guardian's F1 news
 
-On the Guardian's [F1 news page](https://www.theguardian.com/sport/formulaone), use CSS selectors and HTML manipulation in the **Console** to extract details about the first post. Specifically, extract its title, lead paragraph, and URL of the associated photo.
+On the Guardian's [F1 news page](https://www.theguardian.com/sport/formulaone), use CSS selectors and HTML manipulation in the **Console** to extract details about the first post. Specifically, extract its title, lead paragraph (if it has one), and URL of the associated photo.
 
 ![F1 news page](../scraping_basics/images/devtools-exercise-guardian2.png)
 
@@ -132,7 +132,7 @@ On the Guardian's [F1 news page](https://www.theguardian.com/sport/formulaone), 
   1. Notice that the markup does not provide clear, reusable class names for this task. The structure uses generic tag names and randomized classes, requiring you to rely on the element hierarchy and order instead.
   1. In the **Console**, execute `post = document.querySelector('#maincontent ul li')`. This returns the element representing the first post.
   1. Extract the post's title by executing `post.querySelector('h3').textContent`.
-  1. Extract the lead paragraph by executing `post.querySelector('span div').textContent`.
+  1. Extract the lead paragraph (if it has one) by executing `post.querySelector('span div').textContent`.
   1. Extract the photo URL by executing `post.querySelector('img').src`.
 
 </details>
