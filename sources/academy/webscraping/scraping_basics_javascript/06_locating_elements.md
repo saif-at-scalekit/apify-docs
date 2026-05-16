@@ -39,7 +39,7 @@ if (response.ok) {
 }
 ```
 
-Calling [`toArray()`](https://cheerio.js.org/docs/api/classes/Cheerio#toarray) converts the Cheerio selection to a standard JavaScript array. We can then loop over that array and process each selected element.
+Calling [`toArray()`](https://cheerio.js.org/docs/api/classes/cheerio#toarray) converts the Cheerio selection to a standard JavaScript array. We can then loop over that array and process each selected element.
 
 Cheerio requires us to wrap each element with `$()` again before we can work with it further, and then we call `.text()`. If we run the code, it… well, it definitely prints _something_…
 
@@ -136,7 +136,7 @@ When translated to a tree of JavaScript objects, the element with class `price` 
 - a `span` HTML element,
 - a textual node representing the actual amount and possibly also white space.
 
-We can use Cheerio's [`.contents()`](https://cheerio.js.org/docs/api/classes/Cheerio#contents) method to access individual nodes. It returns a list of nodes like this:
+We can use Cheerio's [`.contents()`](https://cheerio.js.org/docs/api/classes/cheerio#contents) method to access individual nodes. It returns a list of nodes like this:
 
 ```text
 LoadedCheerio {
@@ -197,7 +197,7 @@ if (response.ok) {
 }
 ```
 
-We're enjoying the fact that Cheerio selections provide utility methods for accessing items, such as [`.first()`](https://cheerio.js.org/docs/api/classes/Cheerio#first) or [`.last()`](https://cheerio.js.org/docs/api/classes/Cheerio#last). If we run the scraper now, it should print prices as only amounts:
+We're enjoying the fact that Cheerio selections provide utility methods for accessing items, such as [`.first()`](https://cheerio.js.org/docs/api/classes/cheerio#first) or [`.last()`](https://cheerio.js.org/docs/api/classes/cheerio#last). If we run the scraper now, it should print prices as only amounts:
 
 ```text
 $ node index.js
@@ -237,7 +237,7 @@ Macao, China
 
 :::tip Need a nudge?
 
-You may want to check out Cheerio's [`.eq()`](https://cheerio.js.org/docs/api/classes/Cheerio#eq).
+You may want to check out Cheerio's [`.eq()`](https://cheerio.js.org/docs/api/classes/cheerio#eq).
 
 :::
 

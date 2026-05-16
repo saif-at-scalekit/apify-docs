@@ -57,7 +57,7 @@ We'll start from a boilerplate that's very similar to the scraper we built in [B
     {Example}
 </RunnableCodeBlock>
 
-Aside from importing libraries and downloading HTML, we load the HTML into Cheerio and then use it to retrieve all the `<a>` elements. After that, we iterate over the collected links and print their `href` attributes, which we access using the [`.attr()`](https://cheerio.js.org/docs/api/classes/Cheerio#attr) method.
+Aside from importing libraries and downloading HTML, we load the HTML into Cheerio and then use it to retrieve all the `<a>` elements. After that, we iterate over the collected links and print their `href` attributes, which we access using the [`.attr()`](https://cheerio.js.org/docs/api/classes/cheerio#attr) method.
 
 When you run the above code, you'll see quite a lot of links in the terminal. Some of them may look wrong, because they don't start with the regular `https://` protocol. We'll learn what to do with them in the following lessons.
 
