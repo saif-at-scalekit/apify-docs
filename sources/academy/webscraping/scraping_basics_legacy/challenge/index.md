@@ -43,31 +43,20 @@ Our crawler's input will look like this:
 }
 ```
 
-The goal at hand is to scrape all of the products from the first page of results for whatever keyword was provided (for our test case, it will be **iPhone**), then to scrape all available offers of each product and push the results to the dataset. For context, the offers for a product look like this:
-
-![Amazon product offers](../../../platform/expert_scraping_with_apify/images/product-offers.jpg)
+The goal is to scrape all of the products from the first page of results for whatever keyword was provided (for our test case, it will be **iPhone**), then for each product visit its page and scrape the featured offer. Push the results to the dataset.
 
 In the end, we'd like our final output to look something like this:
 
 ```json
 [
     {
-        "title": "Apple iPhone 6 a1549 16GB Space Gray Unlocked (Certified Refurbished)",
-        "asin": "B07P6Y7954",
-        "itemUrl": "https://www.amazon.com/Apple-iPhone-Unlocked-Certified-Refurbished/dp/B00YD547Q6/ref=sr_1_2?s=wireless&ie=UTF8&qid=1539772626&sr=1-2&keywords=iphone",
-        "description": "What's in the box: Certified Refurbished iPhone 6 Space Gray 16GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 1 Year Limited Warranty.",
+        "title": "Apple iPhone 16e, 128GB, Black - Unlocked (Renewed)",
+        "asin": "B0F4RM7Y2L",
+        "itemUrl": "https://www.amazon.com/Apple-iPhone-128GB-eSIM-Black/dp/B0F4RM7Y2L",
+        "description": "This product is certified refurbished...",
         "keyword": "iphone",
         "sellerName": "Blutek Intl",
-        "offer": "$162.97"
-    },
-    {
-        "title": "Apple iPhone 6 a1549 16GB Space Gray Unlocked (Certified Refurbished)",
-        "asin": "B07P6Y7954",
-        "itemUrl": "https://www.amazon.com/Apple-iPhone-Unlocked-Certified-Refurbished/dp/B00YD547Q6/ref=sr_1_2?s=wireless&ie=UTF8&qid=1539772626&sr=1-2&keywords=iphone",
-        "description": "What's in the box: Certified Refurbished iPhone 6 Space Gray 16GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 1 Year Limited Warranty.",
-        "keyword": "iphone",
-        "sellerName": "PLATINUM DEALS",
-        "offer": "$169.98"
+        "offer": "$329.99"
     },
     {
         "...": "..."
@@ -78,7 +67,7 @@ In the end, we'd like our final output to look something like this:
 
 > The `asin` is the ID of the product, which is data present on the Amazon website.
 
-Each of the items in the dataset will represent a scraped offer and will have the same `title`, `asin`, `itemUrl`, and `description`. The offer-specific fields will be `sellerName` and `offer`.
+Each item in the dataset represents one product. The `sellerName` and `offer` fields come from the featured offer shown on the product page, which means you will end up with one result per product.
 
 <!-- After the scrape has completed, we'll programmatically call a [public Actor which sends emails](https://apify.com/apify/send-mail) to send ourselves an email with a publicly viewable link to the Actor's final dataset. -->
 
