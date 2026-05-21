@@ -48,7 +48,7 @@ Then, go ahead and paste the link to your repository into the **Git URL** text f
 
 The final step is to check your **Build settings**. Under the Git URL field, you'll see two options: **Automatic builds** and **Manual builds**. Make sure **Automatic builds** is selected - this tells Apify to rebuild your Actor whenever you push to GitHub, with no extra configuration needed.
 
-![Build settings with Automatic builds selected](./images/build-settings.png)
+![Build settings with Automatic builds selected](./images/build-settings.webp)
 
 And you're done! 🎉
 
